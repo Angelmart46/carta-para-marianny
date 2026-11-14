@@ -16,27 +16,27 @@ let memoryIndex = 0;
 
 const memories = [
   {
-    image: "images/foto-1.jpg",
+    image: "images/1.jpg",
     title: "El comienzo de algo bonito",
     text: "No sabía que una persona podía convertirse en una parte tan bonita de mi vida. Y entonces llegaste tú."
   },
   {
-    image: "images/foto-2.jpg",
+    image: "images/2.jpg",
     title: "Tu sonrisa",
     text: "Hay sonrisas que iluminan un día entero. La tuya tiene esa capacidad de hacerme feliz incluso en los días más normales."
   },
   {
-    image: "images/foto-3.jpg",
+    image: "images/3.jpeg",
     title: "Mi lugar favorito",
     text: "No importa tanto el lugar ni lo que estemos haciendo. Muchas veces, lo mejor del momento es poder compartirlo contigo."
   },
   {
-    image: "images/foto-4.jpg",
+    image: "images/4.jpg",
     title: "Los pequeños detalles",
     text: "Me gustan esas pequeñas cosas que te hacen ser tú: tus ocurrencias, tus gestos y todo eso que quizás ni notas, pero que yo valoro."
   },
   {
-    image: "images/foto-5.jpg",
+    image: "images/5.jpeg",
     title: "Todo lo bonito que falta",
     text: "Todavía nos quedan recuerdos por crear, risas por compartir y momentos que algún día miraremos con una sonrisa."
   }
