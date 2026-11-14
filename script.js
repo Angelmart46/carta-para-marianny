@@ -54,33 +54,60 @@ document.querySelectorAll("[data-next]").forEach(button => {
 
 function renderMemory() {
   const memory = memories[memoryIndex];
-  memoryPhoto.src = memory.image;
-  memoryPhoto.alt = `Fotografía ${memoryIndex + 1}: ${memory.title}`;
+
+  // Limpiar la imagen anterior
+  memoryPhoto.onload = null;
+  memoryPhoto.onerror = null;
+
   memoryPhoto.classList.remove("broken");
-  photoPlaceholder.style.display = "none";
-  memoryPhoto.onload = () => { photoPlaceholder.style.display = "none"; };
-  memoryPhoto.onerror = () => {
-    memoryPhoto.classList.add("broken");
-    photoPlaceholder.style.display = "flex";
-  };
+  photoPlaceholder.style.display = "flex";
+
+  // Configurar la descripción
+  memoryPhoto.alt = `Fotografía ${memoryIndex + 1}: ${memory.title}`;
 
   memoryKicker.textContent = `RECUERDO 0${memoryIndex + 1}`;
   memoryHeading.textContent = memory.title;
   memoryText.textContent = memory.text;
+
   photoCounter.textContent = `0${memoryIndex + 1} / 05`;
+
+  // Detectar cuando la nueva imagen cargue
+  memoryPhoto.onload = () => {
+    photoPlaceholder.style.display = "none";
+    memoryPhoto.classList.remove("broken");
+  };
+
+  // Detectar errores
+  memoryPhoto.onerror = () => {
+    memoryPhoto.classList.add("broken");
+    photoPlaceholder.style.display = "flex";
+    console.error("No se pudo cargar:", memory.image);
+  };
+
+  // Cargar la fotografía correspondiente
+  memoryPhoto.src = memory.image;
+
+  // Controles
   prevMemory.disabled = memoryIndex === 0;
   nextMemory.disabled = memoryIndex === memories.length - 1;
+
   galleryHint.textContent = memoryIndex === memories.length - 1
     ? "Has llegado al último recuerdo. 💚"
     : "Toca la flecha para descubrir el siguiente recuerdo.";
 
   document.querySelectorAll(".dot").forEach((dot, index) => {
     dot.classList.toggle("active", index === memoryIndex);
-    dot.setAttribute("aria-current", index === memoryIndex ? "step" : "false");
+    dot.setAttribute(
+      "aria-current",
+      index === memoryIndex ? "step" : "false"
+    );
   });
-  toLetter.classList.toggle("hidden", memoryIndex !== memories.length - 1);
-}
 
+  toLetter.classList.toggle(
+    "hidden",
+    memoryIndex !== memories.length - 1
+  );
+}
 const dotsContainer = document.getElementById("memoryDots");
 memories.forEach((_, index) => {
   const dot = document.createElement("button");
