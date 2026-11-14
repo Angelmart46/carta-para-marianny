@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071012">
+  <meta name="description" content="Una pequeña sorpresa hecha con amor para Marianny.">
+  <title>Para Marianny 💚</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+  <div class="heart-rain" id="heartRain" aria-hidden="true"></div>
+
+  <button class="music-toggle" id="musicToggle" type="button" aria-label="Activar música" title="Música">
+    <span class="music-icon">♫</span><span id="musicLabel">Música</span>
+  </button>
+  <!-- Añade tu archivo autorizado como music/cancion.mp3 para activar este reproductor. -->
+  <audio id="backgroundMusic" loop preload="none">
+    <source src="music/cancion.mp3" type="audio/mpeg">
+  </audio>
+
+  <main class="experience">
+    <section class="screen active" id="welcome" aria-labelledby="welcomeTitle">
+      <div class="eyebrow"><span class="tiny-heart">♥</span> UNA SORPRESA HECHA PARA TI</div>
+      <div class="hero-heart" aria-hidden="true"><span>♥</span></div>
+      <p class="overline">Para alguien muy especial</p>
+      <h1 id="welcomeTitle">Marianny<span class="turquoise">.</span></h1>
+      <p class="intro">Hay cosas que a veces no caben en un mensaje…<br>por eso quise prepararte algo diferente.</p>
+      <button class="primary-btn" data-next="intro">Abrir mi sorpresa <span>→</span></button>
+      <p class="tiny-note">Hecho con cariño, especialmente para ti.</p>
+    </section>
+
+    <section class="screen" id="intro" aria-labelledby="introTitle">
+      <div class="section-mark">01 <span>·</span> UNAS PALABRAS PARA TI</div>
+      <div class="glass-card intro-card">
+        <span class="card-heart">♡</span>
+        <p class="script-line">Mi chiguirita…</p>
+        <h2 id="introTitle">Quiero regalarte<br><em>un momento bonito.</em></h2>
+        <p>No es algo que puedas envolver ni guardar en una caja. Es una pequeña parte de todo lo que siento por ti, convertida en palabras, recuerdos y mucho amor.</p>
+        <p class="soft-line">Así que respira, sonríe y disfruta este pequeño viaje. 💚</p>
+      </div>
+      <button class="primary-btn" data-next="memories">Quiero verlo <span>→</span></button>
+    </section>
+
+    <section class="screen" id="memories" aria-labelledby="memoryTitle">
+      <div class="section-mark">02 <span>·</span> CINCO PEDACITOS DE NOSOTROS</div>
+      <h2 class="section-title" id="memoryTitle">Pequeños recuerdos,<br><em>sentimientos enormes.</em></h2>
+      <p class="section-subtitle">Cada fotografía guarda algo que quiero que recuerdes.</p>
+
+      <div class="memory-stage">
+        <div class="photo-frame">
+          <div class="photo-glow"></div>
+          <img id="memoryPhoto" src="images/foto-1.jpg" alt="Recuerdo especial con Marianny">
+          <div class="photo-placeholder" id="photoPlaceholder">
+            <span>♡</span>
+            <strong>Tu recuerdo irá aquí</strong>
+            <small>Reemplaza foto-1.jpg en la carpeta images</small>
+          </div>
+          <span class="photo-counter" id="photoCounter">01 / 05</span>
+        </div>
+        <div class="memory-copy" aria-live="polite">
+          <p class="memory-kicker" id="memoryKicker">RECUERDO 01</p>
+          <h3 id="memoryHeading">El comienzo de algo bonito</h3>
+          <p id="memoryText">No sabía que una persona podía convertirse en una parte tan bonita de mi vida. Y entonces llegaste tú.</p>
+        </div>
+      </div>
+
+      <div class="gallery-controls">
+        <button class="round-btn" id="prevMemory" type="button" aria-label="Fotografía anterior" disabled>←</button>
+        <div class="dots" id="memoryDots" aria-label="Progreso de fotografías"></div>
+        <button class="round-btn" id="nextMemory" type="button" aria-label="Siguiente fotografía">→</button>
+      </div>
+      <p class="gallery-hint" id="galleryHint">Toca la flecha para descubrir el siguiente recuerdo.</p>
+      <button class="primary-btn hidden" id="toLetter">Continuar <span>→</span></button>
+    </section>
+
+    <section class="screen" id="letter" aria-labelledby="letterTitle">
+      <div class="section-mark">03 <span>·</span> ALGO QUE QUIERO DECIRTE</div>
+      <div class="letter-wrap">
+        <div class="letter-top">PARA MI CHIGUIRITA <span>♥</span></div>
+        <h2 id="letterTitle">Marianny, <em>mi chiguirita…</em></h2>
+        <div class="letter-body">
+          <p>Quiero recordarte lo especial que eres para mí. Me encanta saber que estás en mi vida y que, entre tantos días comunes, existen momentos que se vuelven inolvidables simplemente porque los comparto contigo.</p>
+          <p>No necesito que todo sea perfecto. Quiero seguir disfrutando de las pequeñas cosas, de nuestras risas, de nuestras ocurrencias y de todos esos detalles que hacen que lo nuestro sea nuestro.</p>
+          <p>Gracias por ser tú, por tu forma de ser y por ocupar un lugar tan bonito en mi corazón. Ojalá nunca dudes de lo mucho que te quiero.</p>
+          <p class="signature">Con todo mi cariño,<br><strong>tu persona favorita. 💚</strong></p>
+        </div>
+      </div>
+      <button class="primary-btn" data-next="surprise">Hay algo más… <span>→</span></button>
+    </section>
+
+    <section class="screen" id="surprise" aria-labelledby="surpriseTitle">
+      <div class="section-mark">04 <span>·</span> UNA ÚLTIMA SORPRESA</div>
+      <div class="surprise-content">
+        <div class="big-heart" aria-hidden="true"><span>♥</span></div>
+        <p class="script-line">Y por si algún día se te olvida…</p>
+        <h2 id="surpriseTitle">Eres alguien<br><em>muy especial para mí.</em></h2>
+        <p class="surprise-note">Mi chiguirita, gracias por existir y por permitirme compartir parte de mi camino contigo. Esto no es el final de nuestra historia; es solo otro recuerdo bonito que quería regalarte.</p>
+        <div class="forever">HECHO CON AMOR <span>♥</span> PARA MARIANNY</div>
+        <button class="text-btn" id="replay" type="button">Volver a vivir la sorpresa ↺</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>Una pequeña carta digital <span>♥</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
